@@ -1,1 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/bM1wuWkJ)
+# Motor racing info
+
+Provides information about various motor racing series, such as the teams, drivers, and points for a given season.
+
+Current implementation showcases the 2023 Season lineups for *Formula One* and *Indy Car*.
+
+## Usage
+
+`pip3 install -r requirements.txt`
+
+`python3 main.py`
