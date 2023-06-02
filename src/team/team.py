@@ -1,6 +1,9 @@
 from src.driver.driver import Driver
 
 class Team():
+    """
+    a class to represent a racing team.
+    """
     def __init__(self, name: str, country: str):
         if not isinstance(name, str):
             raise TypeError(f"{name} must be of type str, not {type(name)}")

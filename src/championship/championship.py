@@ -65,6 +65,19 @@ class Championship():
             if not self.driver_standings.get(d): # if driver is not already in driver's championship
                 self.addDriverToChampionship(d) # add to driver's championship
 
+    def removeTeamFromChampionship(self, team: Team):
+        """
+        adds a team or a list of teams to the championship
+
+        params:
+        team: Team
+        """
+        if not isinstance(team, Team):
+            raise TypeError(f"")
+        
+        if self.team_standings.get(team):
+            self.team_standings.pop(team)
+
     def getDriverStandings(self) -> List:
         '''
         get current driver standings
