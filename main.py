@@ -110,8 +110,12 @@ def main():
             ]
         )
     )
-
+    print("\nTeam Standings")
     for x in formula_one_2023.getTeamStandings():
+        print(x)
+
+    print("\nDriver Standings")
+    for x in formula_one_2023.getDriverStandings():
         print(x)
 
 if __name__ == "__main__":

@@ -75,8 +75,15 @@ class Championship():
         returns:
         List
         '''
-        # TODO
-        pass
+        sorted_standings = sorted(self.driver_standings.items(), key=lambda x:x[1])
+        sorted_standings.reverse()
+
+        printable = list()
+
+        for i in range(len(sorted_standings)):
+            printable.append(f"{i+1}: {sorted_standings[i][0].getNameFormatted()} ({sorted_standings[i][1]} points)")
+
+        return printable
 
     def getTeamStandings(self) -> List:
         '''
