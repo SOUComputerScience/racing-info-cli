@@ -34,7 +34,7 @@ class Team():
 
     def removeDriverFromTeam(self, driver: Driver):
         if not isinstance(driver, Driver):
-            raise TypeError(f"")
+            raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
         
         if driver in self.drivers:
             self.drivers.remove(driver)

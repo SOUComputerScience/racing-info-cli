@@ -50,7 +50,7 @@ class Championship():
 
         for d in team.drivers: # for each of the team's drivers
             if not isinstance(d, Driver):
-                raise TypeError(f"")
+                raise TypeError(f"{d} must be of type Driver, not {type(d)}")
 
             if not self.driver_standings.get(d): # if driver is not already in driver's championship
                 self.addDriverToChampionship(d) # add to driver's championship
@@ -63,7 +63,7 @@ class Championship():
         team: Team
         """
         if not isinstance(team, Team):
-            raise TypeError(f"")
+            raise TypeError(f"{team} must be of type Team, not {type(team)}")
         
         if self.team_standings.get(team):
             self.team_standings.pop(team)
@@ -100,7 +100,7 @@ class Championship():
         results: List[Driver]
         '''
         if not isinstance(race, Race):
-            raise TypeError(f"")
+            raise TypeError(f"{race} must be of type Race, not {type(race)}")
         
         if not self.rounds.get(race):
             self.rounds[race] = list()
@@ -109,7 +109,7 @@ class Championship():
 
             for i in range(1, 11): # only the top 10 drivers get points
                 if not isinstance(results[i], Driver):
-                    raise TypeError(f"")
+                    raise TypeError(f"{results[i]} must be of type Driver, not {type(results[i])}")
                 
                 # update values for driver standings and team standings
 
