@@ -69,12 +69,12 @@ class Championship():
         if self.team_standings.get(team):
             self.team_standings.pop(team)
 
-    def getDriverStandings(self) -> List:
+    def getDriverStandings(self) -> List[str]:
         '''
         get current driver standings
 
         returns:
-        List
+        List[str]
         '''
         sorted_standings = sorted(self.driver_standings.items(), key=lambda x:x[1])
         sorted_standings.reverse()
@@ -82,19 +82,16 @@ class Championship():
         printable = list()
 
         for i in range(len(sorted_standings)):
-            printable.append(f"{i+1}: {sorted_standings[i][0].getNameFormatted()} ({sorted_standings[i][1]} points)")
+            printable.append(f"{i+1}: {sorted_standings[i][0].__str__()} ({sorted_standings[i][1]} points)")
 
         return printable
 
-    def getTeamStandings(self) -> List:
+    def getTeamStandings(self) -> List[str]:
         '''
         get current team standings
 
-        param:
-        None
-
         returns:
-        List
+        List[str]
         '''
         sorted_standings = sorted(self.team_standings.items(), key=lambda x:x[1])
         sorted_standings.reverse()
@@ -110,9 +107,13 @@ class Championship():
         '''
         holds a race and updates standings given the results
 
-        param:
+        params:
         race: Race
         results: RaceResults
         '''
         if not isinstance(race, Race):
             raise TypeError(f"{race} must be of type Race, not {type(race)}")
+        
+        # type check the results
+
+        # TODO update standings based on the results

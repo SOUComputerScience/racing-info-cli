@@ -21,11 +21,16 @@ class Team():
         self.country = country
         self.drivers = list()
 
-        # because the addDriverToTeam() method does type checking internally, we don't need to create an extra for loop to check each item in the list of prospective drivers. this saves processing time and memory!
+        # because the addDriverToTeam() method does type checking internally, 
+        # we don't need to create an extra for loop to check each item in the list of prospective drivers.
+        # this saves processing time and memory!
         for driver in drivers:
             self.addDriverToTeam(driver = driver)
 
     def addDriverToTeam(self, driver: Driver):
+        """
+        TODO
+        """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
         
@@ -33,6 +38,9 @@ class Team():
             self.drivers.append(driver)
 
     def removeDriverFromTeam(self, driver: Driver):
+        """
+        TODO
+        """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
         

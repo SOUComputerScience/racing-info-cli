@@ -4,6 +4,9 @@ from src.team.team import Team
 from typing import List
 
 class RaceResults():
+    """
+    a class to store results associated with a Race
+    """
     def __init__(self, race: Race, rankings: List[Driver], fastestLap: Driver):
         if not isinstance(race, Race):
             raise TypeError(f"{race} must be of type Race, not {type(race)}")
@@ -25,22 +28,42 @@ class RaceResults():
             
             self.results[rankings[i]] = points_system[i]
 
-        if self.results[fastestLap] > 0: # if the driver who got the fastest lap finished in the points
-            self.results[fastestLap] += 1 # give them an extra point for fastest lap
+        # if the driver who got the fastest lap finished in the points
+        if self.results[fastestLap] > 0:
+            # give the driver an extra point for fastest lap
+            self.results[fastestLap] += 1
 
 
     def getPointsForDriver(self, driver: Driver) -> int:
+        """
+        get the points scored by a driver for a specific race
+
+        params:
+        driver: Driver
+
+        returns:
+        int
+        """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
         
         return self.results[driver]
     
     def getPointsForTeam(self, team: Team) -> int:
+        """
+        get the points scored by all drivers in a team for a specific race
+
+        params:
+        team: Team
+
+        returns:
+        int
+        """
         if not isinstance(team, Team):
-            raise TypeError(f"") # TODO
+            raise TypeError(f"{team} must be of type Team, not {type(team)}")
         
         points = 0
         for driver in team.drivers:
             points += self.getPointsForDriver(driver)
-
+        
         return points
