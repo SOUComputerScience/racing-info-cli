@@ -11,9 +11,9 @@ class Championship():
     """
     def __init__(self, series: Series, year: int):
         if not isinstance(series, Series):
-            raise TypeError(f"")
+            raise TypeError(f"{series} must be of type Series, not {type(series)}")
         if not isinstance(year, int):
-            raise TypeError(f"")
+            raise TypeError(f"{year} must be of type int, not {type(year)}")
         
         self.series = series
         self.year = year
@@ -23,38 +23,28 @@ class Championship():
         self.driver_standings = dict()
         self.team_standings = dict()
 
-    def addDriverToChampionship(self, driver: Driver | List(Driver)):
+    def addDriverToChampionship(self, driver: Driver):
         """
         adds a driver or a list of drivers to the championship
 
         params:
-        driver: Driver | List(Driver)
+        driver: Driver
         """
         if not isinstance(driver, Driver):
-            if not isinstance(driver, List):
-                raise TypeError(f"")
-            
-            for d in driver:
-                self.addDriverToChampionship(d)
-            return
+            raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
         
         if not self.driver_standings.get(driver):
             self.driver_standings[driver] = 0
 
-    def addTeamToChampionship(self, team: Team | List(Team)):
+    def addTeamToChampionship(self, team: Team):
         """
-        adds a team or a list of teams to the championship
+        adds a team to the championship
 
         params:
-        team: Team | List(Team)
+        team: Team
         """
         if not isinstance(team, Team):
-            if not isinstance(team, List):
-                raise TypeError(f"")
-            
-            for t in team:
-                self.addTeamToChampionship(t)
-            return
+            raise TypeError(f"{team} must be of type Team, not {type(team)}")
 
         self.team_standings[team] = 0 # add team to team standings, set points to 0
 
@@ -81,9 +71,6 @@ class Championship():
     def getDriverStandings(self) -> List:
         '''
         get current driver standings
-
-        param:
-        None
 
         returns:
         List
@@ -134,6 +121,6 @@ class Championship():
                     self.driver_standings[results[i]] += 1
 
                 # update team standings
-                # TODO
+                # TODO update the team standings (stretch goal???)
                 
             self.rounds[race] = results
