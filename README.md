@@ -1,11 +1,19 @@
-# Motor racing info
+# Motor Racing Info
 
-Provides information about various motor racing series, such as the teams, drivers, and points for a given season.
+CLI program to track information about various motor racing series, such as the teams, drivers, engine manufacturers, and championship standings.
 
-Current implementation showcases the 2023 Season lineups for *Formula One* and *Indy Car*.
+Current implementation includes the Formula One 2023 Championship.
 
 ## Usage
 
+### Install required packages
+
 `pip3 install -r requirements.txt`
+
+### Run unit tests
+
+`pytest tests`
+
+### Run the main program
 
 `python3 main.py`
