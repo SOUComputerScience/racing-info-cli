@@ -110,6 +110,9 @@ def main():
             ]
         )
     )
+
+    # print standings to the console
+
     print("\nTeam Standings")
     for x in formula_one_2023.getTeamStandings():
         print(x)
