@@ -21,7 +21,7 @@ class Team():
         self.country = country
         self.drivers = list()
 
-        # because the addDriverToTeam method does type checking internally, we don't need to create an extra for loop to check each item in the list of prospective drivers
+        # because the addDriverToTeam() method does type checking internally, we don't need to create an extra for loop to check each item in the list of prospective drivers. this saves processing time and memory!
         for driver in drivers:
             self.addDriverToTeam(driver = driver)
 
