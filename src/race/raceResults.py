@@ -1,5 +1,6 @@
 from src.driver.driver import Driver
 from src.race.race import Race
+from src.team.team import Team
 from typing import List
 
 class RaceResults():
@@ -34,27 +35,12 @@ class RaceResults():
         
         return self.results[driver]
     
-    '''
-    if not self.rounds.get(race):
-            self.rounds[race] = list()
+    def getPointsForTeam(self, team: Team) -> int:
+        if not isinstance(team, Team):
+            raise TypeError(f"") # TODO
+        
+        points = 0
+        for driver in team.drivers:
+            points += self.getPointsForDriver(driver)
 
-            points_system = [None, 25, 18, 15, 12, 10, 8, 6, 4, 2, 1]
-
-            for i in range(1, 11): # only the top 10 drivers get points
-                if not isinstance(results[i], Driver):
-                    raise TypeError(f"{results[i]} must be of type Driver, not {type(results[i])}")
-                
-                # update values for driver standings and team standings
-
-                # update driver standings
-
-                self.driver_standings[results[i]] += points_system[i]
-
-                if results.count(results[i]) > 1: # if this driver won fastest lap
-                    self.driver_standings[results[i]] += 1
-
-                # update team standings
-                # TODO update the team standings (stretch goal???)
-                
-            self.rounds[race] = results
-    '''
+        return points
