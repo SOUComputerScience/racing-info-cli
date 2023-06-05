@@ -111,5 +111,8 @@ def main():
         )
     )
 
+    for x in formula_one_2023.getTeamStandings():
+        print(x)
+
 if __name__ == "__main__":
     main()
