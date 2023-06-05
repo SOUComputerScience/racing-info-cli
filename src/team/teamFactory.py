@@ -5,7 +5,7 @@ from typing import List
 
 class TeamFactory:
     @staticmethod
-    def createTeam(self, name: str, engine: EngineInt | str, country: str, drivers: List(Driver)) -> Team:
+    def createTeam(name: str, engine: EngineInt | str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a custom engine
 
@@ -27,7 +27,7 @@ class TeamFactory:
         return Team(name = name, engine = engine, country = country, drivers = drivers)
 
     @staticmethod
-    def createTeamFerrariEngine(self, name: str, country: str, drivers: List(Driver)) -> Team:
+    def createTeamFerrariEngine(name: str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a Ferrari engine
 
@@ -44,7 +44,7 @@ class TeamFactory:
         return Team(name = name, engine = FerrariEngine(), country = country, drivers = drivers)
     
     @staticmethod
-    def createTeamHondaRBPTEngine(self, name: str, country: str, drivers: List(Driver)) -> Team:
+    def createTeamHondaRBPTEngine(name: str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a Honda Red Bull Power Trains engine
 
@@ -61,7 +61,7 @@ class TeamFactory:
         return Team(name = name, engine = HondaRBPTEngine(), country = country, drivers = drivers)
     
     @staticmethod
-    def createTeamMercedesEngine(self, name: str, country: str, drivers: List(Driver)) -> Team:
+    def createTeamMercedesEngine(name: str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a Mercedes engine
 
@@ -78,7 +78,7 @@ class TeamFactory:
         return Team(name = name, engine = MercedesEngine(), country = country, drivers = drivers)
     
     @staticmethod
-    def createTeamRenaultEngine(self, name: str, country: str, drivers: List(Driver)) -> Team:
+    def createTeamRenaultEngine(name: str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a Renault engine
 
