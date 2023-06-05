@@ -20,6 +20,7 @@ class TeamFactory:
         Team
         """
 
+        # if the user entered a str instead of an Engine, use the str as the parameter to create an Engine
         if isinstance(engine, str):
             engine = Engine(engine = engine)
 
