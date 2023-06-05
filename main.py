@@ -21,8 +21,8 @@ def main():
             name = "Alfa Romeo",
             country = "Switzerland",
             drivers = [
-                Driver(surname = "Bottas", givenname = "Valtteri", nationality = "Finland"),
-                Driver(surname = "Zhou", givenname = "Guanyu", nationality = "China", surname_first = True)
+                Driver(surname = "Bottas", givenname = "Valtteri", number = 77, nationality = "Finland"),
+                Driver(surname = "Zhou", givenname = "Guanyu", number = 24, nationality = "China", surname_first = True)
             ]
         )
     )
@@ -31,8 +31,8 @@ def main():
             name = "AlphaTauri",
             country = "Italy",
             drivers = [
-                Driver(surname = "de Vries", givenname = "Nyck", nationality = "Netherlands"),
-                Driver(surname = "Tsunoda", givenname = "Yuki", nationality = "Japan")
+                Driver(surname = "de Vries", givenname = "Nyck", number = 21, nationality = "Netherlands"),
+                Driver(surname = "Tsunoda", givenname = "Yuki", number = 22, nationality = "Japan")
             ]
         )
     )
@@ -41,7 +41,8 @@ def main():
             name = "Alpine",
             country = "France",
             drivers = [
-                # TODO add drivers
+                Driver(surname = "Gasly", givenname = "Pierre", number = 10, nationality = "France"),
+                Driver(surname = "Ocon", givenname = "Esteban", number = 31, nationality = "France")
             ]
         )
     )
@@ -50,7 +51,8 @@ def main():
             name = "Aston Martin",
             country = "United Kingdom",
             drivers = [
-                # TODO add drivers
+               Driver(surname = "Alonso", givenname = "Fernando", number = 14, nationality = "Spain"),
+               Driver(surname = "Stroll", givenname = "Lance", number = 18, nationality = "Canada")
             ]
         )
     )
@@ -59,7 +61,8 @@ def main():
             name = "Ferrari", # this is my second favorite team. They are terrible at strategy and there are multiple memes about how bad their strategy is
             country = "Italy",
             drivers = [
-                # TODO add drivers
+                Driver(surname = "Leclerc", givenname = "Charles", number = 16, nationality = "Monaco"),
+                Driver(surname = "Sainz", suffix = "Jr.", givenname = "Carlos", number = 55, nationality = "Spain")
             ]
         )
     )
@@ -77,8 +80,8 @@ def main():
             name = "McLaren",
             country = "United Kingdom",
             drivers = [
-                Driver(surname = "Norris", givenname = "Lando", nationality = "United Kingdom"),
-                Driver(surname = "Piastri", givenname = "Oscar", nationality = "Australia")
+                Driver(surname = "Norris", givenname = "Lando", number = 4, nationality = "United Kingdom"),
+                Driver(surname = "Piastri", givenname = "Oscar", number = 81, nationality = "Australia")
             ]
         )
     )
@@ -87,8 +90,8 @@ def main():
             name = "Mercedes", # this is my favorite team
             country = "Germany",
             drivers = [
-                Driver(surname = "Hamilton", givenname = "Lewis", nationality = "United Kingdom"),
-                Driver(surname = "Russell", givenname = "George", nationality = "United Kingdom")
+                Driver(surname = "Hamilton", givenname = "Lewis", number = 44, nationality = "United Kingdom"),
+                Driver(surname = "Russell", givenname = "George", number = 63, nationality = "United Kingdom")
             ]
         )
     )
