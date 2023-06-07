@@ -113,6 +113,7 @@ def main():
 
     # add races and race results and print info
 
+    # bahrain grand prix
     bahrain_gp = Race(
         name = "Bahrain Grand Prix",
         country = "Bahrain",
@@ -129,6 +130,20 @@ def main():
             fastestLap = zho
         )
     )
+
+    # TODO: saudi arabian grand prix
+
+    # TODO: australian grand prix
+
+    # TODO: azerbaijan grand prix
+
+    # TODO: saudi arabian grand prix
+
+    # TODO: miami grand prix
+
+    # TODO: monaco grand prix
+
+    # TODO: spanish grand prix
 
     # print standings to the console
 
