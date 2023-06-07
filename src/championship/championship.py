@@ -103,17 +103,23 @@ class Championship():
 
         return printable
 
-    def holdRace(self, race: Race, results: RaceResults):
+    def holdRace(self, race_results: RaceResults):
         '''
         holds a race and updates standings given the results
 
         params:
-        race: Race
-        results: RaceResults
+        race_results: RaceResults
         '''
-        if not isinstance(race, Race):
-            raise TypeError(f"{race} must be of type Race, not {type(race)}")
+
+        # type checking
+
+        if not isinstance(race_results, RaceResults):
+            raise TypeError(f"{race_results} must be of type RaceResults, not {type(race_results)}")
         
-        # type check the results
+        if not isinstance(race_results.race, Race):
+            raise TypeError(f"{race_results.race} must be of type Race, not {type(race_results.race)}")
+        
+        if not isinstance(race_results.results, dict):
+            raise TypeError(f"{race_results.results} must be of type dict, not {type(race_results.results)}")
 
         # TODO update standings based on the results
