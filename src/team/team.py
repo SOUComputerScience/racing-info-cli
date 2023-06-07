@@ -29,7 +29,10 @@ class Team():
 
     def addDriverToTeam(self, driver: Driver):
         """
-        TODO
+        adds a driver to the team
+
+        params:
+        driver: Driver
         """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
@@ -39,7 +42,10 @@ class Team():
 
     def removeDriverFromTeam(self, driver: Driver):
         """
-        TODO
+        removes a driver from the team
+
+        params:
+        driver: Driver
         """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
