@@ -123,3 +123,21 @@ class Championship():
             raise TypeError(f"{race_results.results} must be of type dict, not {type(race_results.results)}")
 
         # TODO update standings based on the results
+
+        tms = list(self.team_standings.keys())
+
+        for i in range(len(tms)):
+            if not isinstance(tms[i], Team):
+                raise TypeError(f"")
+            
+            drs = list(tms[i].drivers)
+            
+            for j in range(len(drs)):
+                if not isinstance(drs[j], Driver):
+                    raise TypeError(f"")
+                
+                new_points = race_results.getPointsForDriver(drs[j])
+                
+                self.team_standings[tms[i]] += new_points
+                self.driver_standings[drs[j]] += new_points
+

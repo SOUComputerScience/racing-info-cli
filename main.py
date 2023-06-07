@@ -111,7 +111,7 @@ def main():
         )
     )
 
-    # create races
+    # add races and race results and print info
 
     bahrain_gp = Race(
         name = "Bahrain Grand Prix",
@@ -119,11 +119,7 @@ def main():
         city = "Sakhir",
         circuit = "Bahrain International Circuit"
     )
-
-    # add race results
-
     print(bahrain_gp.__str__())
-
     formula_one_2023.holdRace(
         RaceResults(
             race = bahrain_gp,
