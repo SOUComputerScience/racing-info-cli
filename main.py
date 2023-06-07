@@ -114,6 +114,7 @@ def main():
     # add races and race results and print info
 
     # bahrain grand prix
+
     bahrain_gp = Race(
         name = "Bahrain Grand Prix",
         country = "Bahrain",
@@ -131,21 +132,129 @@ def main():
         )
     )
 
-    # TODO: saudi arabian grand prix
+    # saudi arabian grand prix
 
-    # TODO: australian grand prix
+    saudi_gp = Race(
+        name = "Saudi Arabian Grand Prix",
+        country = "Saudi Arabia",
+        city = "Jeddah",
+        circuit = "Jeddah Corniche Circuit"
+    )
+    print(saudi_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = saudi_gp,
+            rankings = [
+                per, ver, alo, rus, ham, sai, lec, oco, gas, mag, tsu, hul, zho, dev, pia, sar, nor, bot, alb, stroll
+            ],
+            fastestLap = ver
+        )
+    )
 
-    # TODO: azerbaijan grand prix
+    # australian grand prix
 
-    # TODO: saudi arabian grand prix
+    australian_gp = Race(
+        name = "Australian Grand Prix",
+        country = "Australia",
+        city = "Melbourne",
+        circuit = "Albert Park Circuit"
+    )
+    print(australian_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = australian_gp,
+            rankings = None, # TODO
+            fastestLap = None # TODO
+        )
+    )
 
-    # TODO: miami grand prix
+    # azerbaijan grand prix
 
-    # TODO: monaco grand prix
+    azerbaijan_gp = Race(
+        name = "Azerbaijan Grand Prix",
+        country = "Azerbaijan",
+        city = "Baku",
+        circuit = "Baku City Circuit"
+    )
+    print(azerbaijan_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = azerbaijan_gp,
+            rankings = None, # TODO
+            fastestLap = None # TODO
+        )
+    )
 
-    # TODO: spanish grand prix
+    # miami grand prix
 
-    # print standings to the console
+    miami_gp = Race(
+        name = "Miami Grand Prix",
+        country = "United States",
+        city = "Miami",
+        circuit = "Miami International Autodrome"
+    )
+    print(miami_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = miami_gp,
+            rankings = None, # TODO
+            fastestLap = None # TODO
+        )
+    )
+
+    # monaco grand prix
+
+    monaco_gp = Race(
+        name = "Monaco Grand Prix",
+        country = "Monaco",
+        city = "Monaco",
+        circuit = "Circuit de Monaco"
+    )
+    print(monaco_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = monaco_gp,
+            rankings = None, # TODO
+            fastestLap = None # TODO
+        )
+    )
+
+    # spanish grand prix
+
+    spanish_gp = Race(
+        name = "Spanish Grand Prix",
+        country = "Spain",
+        city = "Barcelona",
+        circuit = "Circuit de Barcelona-Catalunya"
+    )
+    print(spanish_gp.__str__())
+    formula_one_2023.holdRace(
+        RaceResults(
+            race = spanish_gp,
+            rankings = None, # TODO
+            fastestLap = None # TODO
+        )
+    )
+
+    # future races for the 2023 season
+
+    canadian_gp = Race(
+        name = "Canadian Grand Prix",
+        country = "Canada",
+        city = "Montreal",
+        circuit = "Circuit Gilles Villeneuve"
+    )
+
+    austrian_gp = Race(
+        name = "Austrian Grand Prix",
+        country = "Austria",
+        city = "Spielberg",
+        circuit = "Red Bull Ring"
+    )
+
+    # TODO add the rest of the future races for 2023
+
+    # print current standings to the console
 
     print("\nTeam Standings")
     for x in formula_one_2023.getTeamStandings():
