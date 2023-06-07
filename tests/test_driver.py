@@ -1,17 +1,5 @@
 import pytest
 from src.driver.driver import Driver
-from typing import Any
-
-@pytest.fixture
-def driver_fixture():
-    return Driver(
-        surname = "Doe",
-        givenname = "John",
-        number = 0,
-        nationality = "Internet",
-        surname_first = False,
-        suffix = "Jr."
-    )
 
 @pytest.fixture
 def driver_fixture():
@@ -30,10 +18,10 @@ def test___str___(driver_fixture: Driver):
 
     assert isinstance(d, Driver)
     assert isinstance(s, str)
-    
+
     assert s == "John DOE Jr. #0"
 
-def test___str___last_first(driver_fixture: Driver):
+def test___str___surname_first(driver_fixture: Driver):
     d = driver_fixture
     d.surname_first = True
     s = d.__str__()
