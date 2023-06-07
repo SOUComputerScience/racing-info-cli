@@ -1,7 +1,6 @@
 from copy import deepcopy
 import pytest
 from src.driver.driver import Driver
-from src.engine.engine import *
 from src.team.team import Team
 from tests.dummy_data import DUMMY_DRIVER, DUMMY_DRIVER_TWO, DUMMY_TEAM
 
