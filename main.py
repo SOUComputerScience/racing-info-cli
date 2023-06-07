@@ -118,7 +118,7 @@ def main():
         country = "Bahrain",
         city = "Sakhir",
         circuit = "Bahrain International Circuit"
-    ),
+    )
 
     # add race results
 
@@ -127,10 +127,10 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = bahrain_gp,
-            rankings = list(
-                
-            ), # TODO
-            fastestLap = Driver() # TODO
+            rankings = [
+                ver, per, alo, sai, ham, stroll, rus, bot, gas, alb, tsu, sar, mag, dev, hul, zho, nor, oco, lec, pia
+            ],
+            fastestLap = zho
         )
     )
 
