@@ -52,3 +52,6 @@ class Team():
         
         if driver in self.drivers:
             self.drivers.remove(driver)
+
+    def getDrivers(self) -> List[Driver]:
+        return self.drivers
