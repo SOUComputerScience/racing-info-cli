@@ -141,3 +141,10 @@ class Championship():
                 self.team_standings[tms[i]] += new_points
                 self.driver_standings[drs[j]] += new_points
 
+    def __str__(self) -> str:
+        if not isinstance(self.series, Series):
+            raise TypeError(f"{self.series} must be of type Series, not {type(self.series)}")
+        if not isinstance(self.year, int):
+            raise TypeError(f"{self.year} must be of type int, not {type(self.year)}")
+        
+        return f"{self.series} {self.year} Championship"
