@@ -42,3 +42,18 @@ def test_removeDriverFromTeam(team_fixture: Team, driver_fixture: Driver):
 
     team_fixture.removeDriverFromTeam(driver_fixture)
     assert len(team_fixture.drivers) == 0
+
+def test_getDrivers(team_fixture: Team, driver_fixture: Driver):
+    assert isinstance(team_fixture, Team)
+
+    assert len(team_fixture.getDrivers()) == 0
+
+    team_fixture.addDriverToTeam(driver = driver_fixture)
+
+    drivers = team_fixture.getDrivers()
+
+    assert isinstance(drivers, list)
+    assert len(drivers) == 1
+    
+    assert isinstance(drivers[0], Driver)
+    assert drivers[0] == driver_fixture
