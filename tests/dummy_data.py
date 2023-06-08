@@ -38,7 +38,7 @@ DUMMY_SERIES = Series(
 
 DUMMY_CHAMPIONSHIP = Championship(
     series = DUMMY_SERIES,
-    year = 0
+    year = 1011
 )
 
 DUMMY_TEAM = Team(
