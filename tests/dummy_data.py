@@ -23,7 +23,7 @@ DUMMY_DRIVER_TWO = Driver(
     suffix = None
 )
 
-DUMMY_ENGINE = Engine(engine = "Dummy Engine")
+DUMMY_ENGINE = Engine(engine = "Dummy")
 
 DUMMY_RACE = Race(
     name = "Dummy Race",
