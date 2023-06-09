@@ -4,6 +4,8 @@ from src.driver.driver import Driver
 from src.team.team import Team
 from tests.dummy_data import DUMMY_DRIVER, DUMMY_DRIVER_TWO, DUMMY_TEAM
 
+# Fixtures
+
 @pytest.fixture
 def driver_fixture():
     return deepcopy(DUMMY_DRIVER)
@@ -11,6 +13,8 @@ def driver_fixture():
 @pytest.fixture
 def team_fixture():
     return deepcopy(DUMMY_TEAM)
+
+# Test Cases
 
 def test_addDriverToTeam(team_fixture: Team, driver_fixture: Driver):
     assert isinstance(team_fixture, Team)
