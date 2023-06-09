@@ -25,6 +25,8 @@ class RaceResults():
         rankings.insert(0, None)
 
         for i in range(1,21):
+            if i >= len(rankings):
+                break
             if not isinstance(rankings[i], Driver):
                 raise TypeError(f"{rankings[i]} must be of type Driver, not {type(rankings[i])}")
             
