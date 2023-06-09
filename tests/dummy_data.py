@@ -2,6 +2,7 @@ from src.championship.championship import Championship
 from src.driver.driver import Driver
 from src.engine.engine import Engine
 from src.race.race import Race
+from src.race.raceResults import RaceResults
 from src.series.series import Series
 from src.team.team import Team
 
@@ -53,4 +54,10 @@ DUMMY_TEAM_TWO = Team(
     engine = DUMMY_ENGINE,
     country = "Internet",
     drivers = []
+)
+
+DUMMY_RACE_RESULTS = RaceResults(
+    race = DUMMY_RACE,
+    rankings = [DUMMY_DRIVER, DUMMY_DRIVER_TWO],
+    fastestLap = DUMMY_DRIVER
 )
