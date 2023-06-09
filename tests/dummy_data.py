@@ -15,10 +15,10 @@ DUMMY_DRIVER = Driver(
 )
 
 DUMMY_DRIVER_TWO = Driver(
-    surname = "",
-    givenname = "",
+    surname = "Tables",
+    givenname = "Bobby",
     number = -1,
-    nationality = "",
+    nationality = "SQL Land",
     surname_first = False,
     suffix = None
 )
@@ -43,6 +43,13 @@ DUMMY_CHAMPIONSHIP = Championship(
 
 DUMMY_TEAM = Team(
     name = "Dummy Team",
+    engine = DUMMY_ENGINE,
+    country = "Internet",
+    drivers = []
+)
+
+DUMMY_TEAM_TWO = Team(
+    name = "Dummy Team Two",
     engine = DUMMY_ENGINE,
     country = "Internet",
     drivers = []

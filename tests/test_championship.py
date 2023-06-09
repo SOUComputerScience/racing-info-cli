@@ -6,7 +6,7 @@ from src.race.race import Race
 from src.race.raceResults import RaceResults
 from src.series.series import Series
 from src.team.team import Team
-from tests.dummy_data import DUMMY_CHAMPIONSHIP, DUMMY_DRIVER, DUMMY_TEAM # TODO edit this later to only import used dummy vars 
+from tests.dummy_data import DUMMY_CHAMPIONSHIP, DUMMY_DRIVER, DUMMY_DRIVER_TWO, DUMMY_TEAM, DUMMY_TEAM_TWO
 from typing import Any, List
 
 # fixtures
@@ -130,49 +130,81 @@ def test_addTeamToChampionship_alreadyInChampionship(championship_fixture: Champ
     assert team_fixture in championship_fixture.team_standings.keys() # the key is correct
     assert championship_fixture.team_standings[team_fixture] == 0 # the value for the key is correct
 
-# removeDriverFromChampionship test cases
-
-def test_removeDriverFromChampionship(championship_fixture: Championship, driver_fixture: Driver):
-    assert isinstance(championship_fixture, Championship)
-
-    pass # TODO
-
-
-def test_removeDriverFromChampionship_notInChampionship(championship_fixture: Championship, driver_fixture: Driver):
-    assert isinstance(championship_fixture, Championship)
-
-    pass # TODO
-
 # removeTeamFromChampionship test cases
 
 def test_removeTeamFromChampionship_noDrivers(championship_fixture: Championship, team_fixture: Team):
     assert isinstance(championship_fixture, Championship)
+    assert isinstance(team_fixture, Team)
 
-    pass # TODO
+    championship_fixture.addTeamToChampionship(team = team_fixture)
+    assert championship_fixture.team_standings[team_fixture] == 0
+
+    championship_fixture.removeTeamFromChampionship(team = team_fixture)
+    assert not championship_fixture.team_standings[team_fixture]
 
 def test_removeTeamFromChampionship_hasDrivers(championship_fixture: Championship, driver_fixture: Driver, team_fixture: Team):
     assert isinstance(championship_fixture, Championship)
+    assert isinstance(team_fixture, Team)
+    assert isinstance(driver_fixture, Driver)
 
-    pass # TODO
+    team_fixture.addDriverToTeam(driver = driver_fixture)
+    assert team_fixture.drivers[0] == driver_fixture
+
+    championship_fixture.addTeamToChampionship(team = team_fixture)
+    assert championship_fixture.team_standings[team_fixture] == 0
+
+    championship_fixture.removeTeamFromChampionship(team = team_fixture)
+    assert not championship_fixture.team_standings[team_fixture]
 
 def test_removeTeamFromChampionship_notInChampionship(championship_fixture: Championship, driver_fixture: Driver, team_fixture: Team):
     assert isinstance(championship_fixture, Championship)
+    assert isinstance(team_fixture, Team)
 
-    pass # TODO
+    with pytest.raises(KeyError):
+        championship_fixture.team_standings[team_fixture]
+
+    championship_fixture.removeTeamFromChampionship(team = team_fixture)
+
+    with pytest.raises(KeyError):
+        championship_fixture.team_standings[team_fixture]
 
 # getDriverStandings test cases
 
-def test_getDriverStandings(championship_fixture: Championship):
+def test_getDriverStandings(championship_fixture: Championship, driver_fixture: Driver):
     assert isinstance(championship_fixture, Championship)
+    assert isinstance(driver_fixture, Driver)
 
-    pass # TODO
+    championship_fixture.addDriverToChampionship(driver = driver_fixture)
+    championship_fixture.addDriverToChampionship(driver = DUMMY_DRIVER_TWO)
+
+    championship_fixture.driver_standings[driver_fixture] = 2
+    championship_fixture.driver_standings[DUMMY_DRIVER_TWO] = 18
+
+    d_stand = championship_fixture.getDriverStandings()
+    assert isinstance(d_stand, list)
+    assert len(d_stand) == 2
+
+    assert d_stand[0] == f"1: {DUMMY_DRIVER_TWO.__str__()} (18 points)"
+    assert d_stand[1] == f"2: {driver_fixture.__str__()} (2 points)"
 
 # getTeamStandings test cases
 
-def test_getTeamStandings(championship_fixture: Championship):
+def test_getTeamStandings(championship_fixture: Championship, team_fixture: Team):
     assert isinstance(championship_fixture, Championship)
+    assert isinstance(team_fixture, Team)
 
-    pass # TODO
+    championship_fixture.addTeamToChampionship(team = team_fixture)
+    championship_fixture.addTeamToChampionship(team = DUMMY_TEAM_TWO)
+
+    championship_fixture.team_standings[team_fixture] = 2
+    championship_fixture.team_standings[DUMMY_TEAM_TWO] = 18
+
+    t_stand = championship_fixture.getTeamStandings()
+    assert isinstance(t_stand, list)
+    assert len(t_stand) == 2
+
+    assert t_stand[0] == "1: Dummy Team Two (18 points)"
+    assert t_stand[1] == "2: Dummy Team (2 points)"
 
 # holdRace test cases
 

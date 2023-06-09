@@ -82,7 +82,7 @@ class Championship():
         printable = list()
 
         for i in range(len(sorted_standings)):
-            printable.append(f"{i+1}: {sorted_standings[i][0].__str__()} ({sorted_standings[i][1]} points)")
+            printable.append(f"{str(i+1)}: {sorted_standings[i][0].__str__()} ({sorted_standings[i][1]} points)")
 
         return printable
 
@@ -99,7 +99,7 @@ class Championship():
         printable = list()
 
         for i in range(len(sorted_standings)):
-            printable.append(f"{i+1}: {sorted_standings[i][0].name} ({sorted_standings[i][1]} points)")
+            printable.append(f"{str(i+1)}: {sorted_standings[i][0].name} ({sorted_standings[i][1]} points)")
 
         return printable
 
