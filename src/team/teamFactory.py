@@ -5,14 +5,14 @@ from typing import List
 
 class TeamFactory:
     @staticmethod
-    def createTeam(name: str, engine: EngineInt | str, country: str, drivers: List[Driver]) -> Team:
+    def createTeam(name: str, engine: Engine | str, country: str, drivers: List[Driver]) -> Team:
         """
         create a team with a custom engine
 
         params:
 
         name: str
-        engine: EngineInt | str
+        engine: Engine | str
         country: str
         drivers: List(Driver)
         
