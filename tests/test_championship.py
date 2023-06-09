@@ -4,12 +4,10 @@ from src.championship.championship import Championship
 from src.driver.driver import Driver
 from src.race.race import Race
 from src.race.raceResults import RaceResults
-from src.series.series import Series
 from src.team.team import Team
-from tests.dummy_data import DUMMY_CHAMPIONSHIP, DUMMY_DRIVER, DUMMY_DRIVER_TWO, DUMMY_TEAM, DUMMY_TEAM_TWO
-from typing import Any, List
+from tests.dummy_data import DUMMY_CHAMPIONSHIP, DUMMY_DRIVER, DUMMY_DRIVER_TWO, DUMMY_RACE, DUMMY_RACE_RESULTS, DUMMY_TEAM, DUMMY_TEAM_TWO
 
-# fixtures
+# Fixtures
 
 @pytest.fixture
 def championship_fixture():
@@ -20,10 +18,14 @@ def driver_fixture():
     return deepcopy(DUMMY_DRIVER)
 
 @pytest.fixture
+def race_fixture():
+    return deepcopy(DUMMY_RACE)
+
+@pytest.fixture
 def team_fixture():
     return deepcopy(DUMMY_TEAM)
 
-# test cases
+# Test Cases
 
 def test___str__(championship_fixture: Championship):
     assert isinstance(championship_fixture, Championship)
@@ -208,7 +210,7 @@ def test_getTeamStandings(championship_fixture: Championship, team_fixture: Team
 
 # holdRace test cases
 
-def test_holdRace(championship_fixture: Championship):
+def test_holdRace(championship_fixture: Championship, race_fixture: Race):
     assert isinstance(championship_fixture, Championship)
 
     pass # TODO
