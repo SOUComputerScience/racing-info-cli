@@ -122,7 +122,7 @@ class Championship():
         if not isinstance(race_results.results, dict):
             raise TypeError(f"{race_results.results} must be of type dict, not {type(race_results.results)}")
 
-        # TODO update standings based on the results
+        # update standings based on the results
 
         tms = list(self.team_standings.keys())
 
