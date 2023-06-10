@@ -50,7 +50,7 @@ class RaceResults():
         """
         if not isinstance(driver, Driver):
             raise TypeError(f"{driver} must be of type Driver, not {type(driver)}")
-        
+
         return self.results[driver]
     
     def getPointsForTeam(self, team: Team) -> int:
