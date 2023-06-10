@@ -55,9 +55,3 @@ DUMMY_TEAM_TWO = Team(
     country = "Internet",
     drivers = []
 )
-
-DUMMY_RACE_RESULTS = RaceResults(
-    race = DUMMY_RACE,
-    rankings = [DUMMY_DRIVER, DUMMY_DRIVER_TWO],
-    fastestLap = DUMMY_DRIVER
-)
