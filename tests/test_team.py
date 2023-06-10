@@ -11,6 +11,10 @@ def driver_fixture():
     return deepcopy(DUMMY_DRIVER)
 
 @pytest.fixture
+def driver_fixture_two():
+    return deepcopy(DUMMY_DRIVER_TWO)
+
+@pytest.fixture
 def team_fixture():
     return deepcopy(DUMMY_TEAM)
 
@@ -29,11 +33,12 @@ def test_addDriverToTeam(team_fixture: Team, driver_fixture: Driver):
     team_fixture.addDriverToTeam(driver_fixture)
     assert len(team_fixture.drivers) == 1
 
-def test_removeDriverFromTeam(team_fixture: Team, driver_fixture: Driver):
+def test_removeDriverFromTeam(team_fixture: Team, driver_fixture: Driver, driver_fixture_two: Driver):
     team_fixture = team_fixture
 
-    assert isinstance(team_fixture, Team)
     assert isinstance(driver_fixture, Driver)
+    assert isinstance(driver_fixture_two, Driver)
+    assert isinstance(team_fixture, Team)
 
     assert len(team_fixture.drivers) == 0
     team_fixture.addDriverToTeam(driver_fixture)
@@ -41,7 +46,7 @@ def test_removeDriverFromTeam(team_fixture: Team, driver_fixture: Driver):
     assert len(team_fixture.drivers) == 1
     assert team_fixture.drivers[0] == driver_fixture
 
-    team_fixture.removeDriverFromTeam(DUMMY_DRIVER_TWO)
+    team_fixture.removeDriverFromTeam(driver_fixture_two)
     assert len(team_fixture.drivers) == 1
 
     team_fixture.removeDriverFromTeam(driver_fixture)
