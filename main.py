@@ -163,6 +163,7 @@ def main():
     # azerbaijan sprint race
 
     # manually update standings with azerbaijan sprint race results
+    
     formula_one_2023.driver_standings[per] += 8
     formula_one_2023.driver_standings[lec] += 7
     formula_one_2023.driver_standings[ver] += 6
