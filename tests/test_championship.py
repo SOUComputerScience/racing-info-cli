@@ -26,10 +26,6 @@ def race_fixture():
     return deepcopy(DUMMY_RACE)
 
 @pytest.fixture
-def race_results_fixture():
-    return deepcopy(DUMMY_RACE_RESULTS)
-
-@pytest.fixture
 def team_fixture():
     return deepcopy(DUMMY_TEAM)
 
