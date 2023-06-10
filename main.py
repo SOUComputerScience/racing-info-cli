@@ -163,8 +163,8 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = australian_gp,
-            rankings = None, # TODO
-            fastestLap = None # TODO
+            rankings = [ver, ham, alo, stroll, per, nor, hul, pia, zho, tsu, bot, sai, gas, oco, dev, sar, mag, rus, alb, lec],
+            fastestLap = per
         )
     )
 
@@ -180,8 +180,8 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = azerbaijan_gp,
-            rankings = None, # TODO
-            fastestLap = None # TODO
+            rankings = [per, ver, lec, alo, sai, ham, stroll, rus, nor, tsu, pia, alb, mag, gas, oco, sar, hul, bot, zho, dev],
+            fastestLap = rus
         )
     )
 
@@ -197,8 +197,8 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = miami_gp,
-            rankings = None, # TODO
-            fastestLap = None # TODO
+            rankings = [ver, per, alo, rus, sai, ham, lec, gas, oco, mag, tsu, stroll, bot, alb, hul, zho, nor, dev, pia, sar],
+            fastestLap = ver
         )
     )
 
@@ -214,8 +214,8 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = monaco_gp,
-            rankings = None, # TODO
-            fastestLap = None # TODO
+            rankings = [ver, alo, oco, ham, rus, lec, gas, sai, nor, pia, bot, dev, zho, alb, tsu, per, hul, sar, mag, stroll],
+            fastestLap = ham
         )
     )
 
@@ -231,8 +231,8 @@ def main():
     formula_one_2023.holdRace(
         RaceResults(
             race = spanish_gp,
-            rankings = None, # TODO
-            fastestLap = None # TODO
+            rankings = [ver, ham, rus, per, sai, stroll, alo, oco, zho, gas, lec, tsu, pia, dev, hul, alb, nor, mag, bot, sar],
+            fastestLap = ver
         )
     )
 
@@ -252,7 +252,7 @@ def main():
         circuit = "Red Bull Ring"
     )
 
-    # TODO add the rest of the future races for 2023
+    # TODO add the rest of the future races for 2023 (stretch goal)
 
     # print current standings to the console
 

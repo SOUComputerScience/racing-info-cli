@@ -2,7 +2,7 @@
 
 class Race():
     """
-    TODO
+    a class to represent a race
     """
     def __init__(self, name: str, country: str, city: str, circuit: str):
         if not isinstance(name, str):
