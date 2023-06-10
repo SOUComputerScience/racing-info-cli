@@ -40,76 +40,69 @@ def main():
 
     # create teams using TeamFactory
 
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamFerrariEngine(
-            name = "Alfa Romeo",
-            country = "Switzerland",
-            drivers = [bot, zho]
-        )
+    alfa_romeo = TeamFactory.createTeamFerrariEngine(
+        name = "Alfa Romeo",
+        country = "Switzerland",
+        drivers = [bot, zho]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamHondaRBPTEngine(
-            name = "AlphaTauri",
-            country = "Italy",
-            drivers = [dev, tsu]
-        )
+    alphatauri = TeamFactory.createTeamHondaRBPTEngine(
+        name = "AlphaTauri",
+        country = "Italy",
+        drivers = [dev, tsu]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamRenaultEngine(
-            name = "Alpine",
-            country = "France",
-            drivers = [gas, oco]
-        )
+    alpine = TeamFactory.createTeamRenaultEngine(
+        name = "Alpine",
+        country = "France",
+        drivers = [gas, oco]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamMercedesEngine(
-            name = "Aston Martin",
-            country = "United Kingdom",
-            drivers = [alo, stroll]
-        )
+    aston_martin = TeamFactory.createTeamMercedesEngine(
+        name = "Aston Martin",
+        country = "United Kingdom",
+        drivers = [alo, stroll]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamFerrariEngine(
-            name = "Ferrari", # this is my second favorite team. They are terrible at strategy and there are multiple memes about how bad their strategy is
-            country = "Italy",
-            drivers = [lec, sai]
-        )
+    ferrari = TeamFactory.createTeamFerrariEngine(
+        name = "Ferrari", # this is my second favorite team. They are terrible at strategy and there are multiple memes about how bad their strategy is
+        country = "Italy",
+        drivers = [lec, sai]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamFerrariEngine(
-            name = "Haas",
-            country = "United States",
-            drivers = [hul, mag]
-        )
+    haas = TeamFactory.createTeamFerrariEngine(
+        name = "Haas",
+        country = "United States",
+        drivers = [hul, mag]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamMercedesEngine(
-            name = "McLaren",
-            country = "United Kingdom",
-            drivers = [nor, pia]
-        )
+    mclaren = TeamFactory.createTeamMercedesEngine(
+        name = "McLaren",
+        country = "United Kingdom",
+        drivers = [nor, pia]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamMercedesEngine(
-            name = "Mercedes", # this is my favorite team
-            country = "Germany",
-            drivers = [ham, rus]
-        )
+    mercedes = TeamFactory.createTeamMercedesEngine(
+        name = "Mercedes", # this is my favorite team
+        country = "Germany",
+        drivers = [ham, rus]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamHondaRBPTEngine(
-            name = "Red Bull", # you're not going to believe this, but Red Bull is actually a better team right now than Ferrari
-            country = "Austria",
-            drivers = [per, ver]
-        )
+    red_bull = TeamFactory.createTeamHondaRBPTEngine(
+        name = "Red Bull", # you're not going to believe this, but Red Bull is actually a better team right now than Ferrari
+        country = "Austria",
+        drivers = [per, ver]
     )
-    formula_one_2023.addTeamToChampionship(
-        TeamFactory.createTeamMercedesEngine(
-            name = "Williams",
-            country = "United Kingdom",
-            drivers = [alb, sar]
-        )
+    williams = TeamFactory.createTeamMercedesEngine(
+        name = "Williams",
+        country = "United Kingdom",
+        drivers = [alb, sar]
     )
+
+    # add teams to championship
+
+    formula_one_2023.addTeamToChampionship(team = alfa_romeo)
+    formula_one_2023.addTeamToChampionship(team = alphatauri)
+    formula_one_2023.addTeamToChampionship(team = alpine)
+    formula_one_2023.addTeamToChampionship(team = aston_martin)
+    formula_one_2023.addTeamToChampionship(team = ferrari)
+    formula_one_2023.addTeamToChampionship(team = haas)
+    formula_one_2023.addTeamToChampionship(team = mclaren)
+    formula_one_2023.addTeamToChampionship(team = mercedes)
+    formula_one_2023.addTeamToChampionship(team = red_bull)
+    formula_one_2023.addTeamToChampionship(team = williams)
 
     # add races and race results and print info
 
@@ -122,15 +115,15 @@ def main():
         circuit = "Bahrain International Circuit"
     )
     print(bahrain_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = bahrain_gp,
-            rankings = [
-                ver, per, alo, sai, ham, stroll, rus, bot, gas, alb, tsu, sar, mag, dev, hul, zho, nor, oco, lec, pia
-            ],
-            fastestLap = zho
-        )
+    rr = RaceResults(
+        race = bahrain_gp,
+        rankings = [
+            ver, per, alo, sai, ham, stroll, rus, bot, gas, alb, tsu, sar, mag, dev, hul, zho, nor, oco, lec, pia
+        ],
+        fastestLap = zho
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
 
     # saudi arabian grand prix
 
@@ -141,15 +134,14 @@ def main():
         circuit = "Jeddah Corniche Circuit"
     )
     print(saudi_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = saudi_gp,
-            rankings = [
-                per, ver, alo, rus, ham, sai, lec, oco, gas, mag, tsu, hul, zho, dev, pia, sar, nor, bot, alb, stroll
-            ],
-            fastestLap = ver
-        )
+    rr = RaceResults(
+        race = saudi_gp,
+        rankings = [
+            per, ver, alo, rus, ham, sai, lec, oco, gas, mag, tsu, hul, zho, dev, pia, sar, nor, bot, alb, stroll
+        ],
+        fastestLap = ver
     )
+    formula_one_2023.holdRace(rr)
 
     # australian grand prix
 
@@ -160,13 +152,30 @@ def main():
         circuit = "Albert Park Circuit"
     )
     print(australian_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = australian_gp,
-            rankings = [ver, ham, alo, stroll, per, nor, hul, pia, zho, tsu, bot, sai, gas, oco, dev, sar, mag, rus, alb, lec],
-            fastestLap = per
-        )
+    rr = RaceResults(
+        race = australian_gp,
+        rankings = [ver, ham, alo, stroll, per, nor, hul, pia, zho, tsu, bot, sai, gas, oco, dev, sar, mag, rus, alb, lec],
+        fastestLap = per
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
+
+    # azerbaijan sprint race
+
+    # manually update standings with azerbaijan sprint race results
+    formula_one_2023.driver_standings[per] += 8
+    formula_one_2023.driver_standings[lec] += 7
+    formula_one_2023.driver_standings[ver] += 6
+    formula_one_2023.driver_standings[rus] += 5
+    formula_one_2023.driver_standings[sai] += 4
+    formula_one_2023.driver_standings[alo] += 3
+    formula_one_2023.driver_standings[ham] += 2
+    formula_one_2023.driver_standings[stroll] += 1
+
+    formula_one_2023.team_standings[aston_martin] += 4
+    formula_one_2023.team_standings[ferrari] += 11
+    formula_one_2023.team_standings[mercedes] += 7
+    formula_one_2023.team_standings[red_bull] += 14
 
     # azerbaijan grand prix
 
@@ -177,13 +186,13 @@ def main():
         circuit = "Baku City Circuit"
     )
     print(azerbaijan_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = azerbaijan_gp,
-            rankings = [per, ver, lec, alo, sai, ham, stroll, rus, nor, tsu, pia, alb, mag, gas, oco, sar, hul, bot, zho, dev],
-            fastestLap = rus
-        )
+    rr = RaceResults(
+        race = azerbaijan_gp,
+        rankings = [per, ver, lec, alo, sai, ham, stroll, rus, nor, tsu, pia, alb, mag, gas, oco, sar, hul, bot, zho, dev],
+        fastestLap = rus
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
 
     # miami grand prix
 
@@ -194,13 +203,13 @@ def main():
         circuit = "Miami International Autodrome"
     )
     print(miami_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = miami_gp,
-            rankings = [ver, per, alo, rus, sai, ham, lec, gas, oco, mag, tsu, stroll, bot, alb, hul, zho, nor, dev, pia, sar],
-            fastestLap = ver
-        )
+    rr = RaceResults(
+        race = miami_gp,
+        rankings = [ver, per, alo, rus, sai, ham, lec, gas, oco, mag, tsu, stroll, bot, alb, hul, zho, nor, dev, pia, sar],
+        fastestLap = ver
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
 
     # monaco grand prix
 
@@ -211,13 +220,13 @@ def main():
         circuit = "Circuit de Monaco"
     )
     print(monaco_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = monaco_gp,
-            rankings = [ver, alo, oco, ham, rus, lec, gas, sai, nor, pia, bot, dev, zho, alb, tsu, per, hul, sar, mag, stroll],
-            fastestLap = ham
-        )
+    rr = RaceResults(
+        race = monaco_gp,
+        rankings = [ver, alo, oco, ham, rus, lec, gas, sai, nor, pia, bot, dev, zho, alb, tsu, per, hul, sar, mag, stroll],
+        fastestLap = ham
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
 
     # spanish grand prix
 
@@ -228,13 +237,13 @@ def main():
         circuit = "Circuit de Barcelona-Catalunya"
     )
     print(spanish_gp.__str__())
-    formula_one_2023.holdRace(
-        RaceResults(
-            race = spanish_gp,
-            rankings = [ver, ham, rus, per, sai, stroll, alo, oco, zho, gas, lec, tsu, pia, dev, hul, alb, nor, mag, bot, sar],
-            fastestLap = ver
-        )
+    rr = RaceResults(
+        race = spanish_gp,
+        rankings = [ver, ham, rus, per, sai, stroll, alo, oco, zho, gas, lec, tsu, pia, dev, hul, alb, nor, mag, bot, sar],
+        fastestLap = ver
     )
+    formula_one_2023.holdRace(rr)
+    print(rr.getPointsForDriver(driver = ver))
 
     # future races for the 2023 season
 
